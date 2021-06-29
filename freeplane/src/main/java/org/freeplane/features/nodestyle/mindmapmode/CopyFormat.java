@@ -21,6 +21,8 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JOptionPane;
 
+import org.freeplane.api.LengthUnit;
+import org.freeplane.api.Quantity;
 import org.freeplane.core.resources.ResourceController;
 import org.freeplane.core.ui.AFreeplaneAction;
 import org.freeplane.core.ui.AMultipleNodeAction;
@@ -40,6 +42,8 @@ class CopyFormat extends AFreeplaneAction {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	
+	public static Quantity<LengthUnit> iconSize = null;
 
 	public static NodeModel getPattern() {
 		return pattern;

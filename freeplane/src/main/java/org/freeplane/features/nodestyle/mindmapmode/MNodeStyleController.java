@@ -74,6 +74,13 @@ public class MNodeStyleController extends NodeStyleController {
 			if (fromBorder != null) {
 				fromBorder.copyTo(NodeBorderModel.createNodeBorderModel(to));
 			}
+			if (to == CopyFormat.getPattern()) {
+				CopyFormat.iconSize = from.getSharedData().getIcons().getIconSize();
+			}
+			if (from == CopyFormat.getPattern()) {
+				to.getSharedData().getIcons().setIconSize(CopyFormat.iconSize);
+				Controller.getCurrentModeController().getMapController().nodeChanged(to, NodeModel.NODE_ICON_SIZE, null, CopyFormat.iconSize);
+			}
 
 		}
 
